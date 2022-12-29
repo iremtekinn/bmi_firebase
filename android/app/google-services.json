@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "909875309494",
+    "project_id": "bmifirebase-b1e5a",
+    "storage_bucket": "bmifirebase-b1e5a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:909875309494:android:e702dbbdddaaa52a436f17",
+        "android_client_info": {
+          "package_name": "com.example.bmi_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "909875309494-62ikadvjcobkjkqnlqg6qos1l1d6mrgo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7mkoA5FapkfzIH5hOUB1BxdM1tmnSuYo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "909875309494-62ikadvjcobkjkqnlqg6qos1l1d6mrgo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
