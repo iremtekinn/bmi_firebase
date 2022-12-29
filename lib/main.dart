@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 import 'di.dart';
 import 'routes/routes.dart';
@@ -16,15 +17,22 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-       
-        primarySwatch: Colors.blue,
-      ),
-     // home: const MyHomePage(title: 'Flutter Demo Home Page'),
-     initialRoute: Routes.LOGIN,
-     getPages: AppPages.routes,
+    return ResponsiveSizer(
+      builder: (context, orientation, screenType) {
+         return GetMaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+         
+          primarySwatch: Colors.blue,
+        ),
+       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+       debugShowCheckedModeBanner: false,
+       initialRoute: Routes.LOGIN,
+       getPages: AppPages.routes,
+      );
+      },
+      //child:
+      
     );
   }
 }
