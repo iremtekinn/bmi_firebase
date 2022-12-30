@@ -1,54 +1,65 @@
-import 'package:bmi_firebase/modules/login/login_controller.dart';
-import 'package:bmi_firebase/routes/app_pages.dart';
+import 'package:bmi_firebase/modules/register/register_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class Login extends GetView<LoginController> {
-  const Login({super.key});
+import '../../routes/app_pages.dart';
+
+class Register extends GetView<RegisterController> {
+   const Register({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
-      resizeToAvoidBottomInset: false,
-      body: Column(
+      backgroundColor: Color(0xffff9675),
+       resizeToAvoidBottomInset: false,
+      body:Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 200, left: 10),
+            padding: const EdgeInsets.only(top: 200, left: 150),
             child: Text(
-              "Hello there !",
-              style: GoogleFonts.sacramento(
-                  textStyle: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 24.sp,
-                  ),
-                  shadows: [
-                    Shadow(
-                      blurRadius: 10.0,
-                      color: Color.fromRGBO(0, 0, 0, 0.25),
-                      offset: Offset(
-                        0,
-                        4,
-                      ),
-                    )
-                  ]),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 10.0, left: 10.0),
-            child: Text("Welcome to your dashboard",
-                style: GoogleFonts.roboto(
+                "Sign Up",
+                style: GoogleFonts.pragatiNarrow(color: Colors.white,
                     textStyle: TextStyle(
-                  fontSize: 15.sp,
-                  fontWeight: FontWeight.w400,
-                ))),
+                      fontWeight: FontWeight.w400,
+                      fontSize: 24.sp,
+                    ),
+                    shadows: [
+                      Shadow(
+                        blurRadius: 10.0,
+                        color: Color.fromRGBO(0, 0, 0, 0.25),
+                        offset: Offset(
+                          0,
+                          4,
+                        ),
+                      )
+                    ]),
+              ),
+              
           ),
           Padding(
-            padding: const EdgeInsets.only(left:8.0,top:90),
+            padding: const EdgeInsets.only(top: 10.0, left: 30.0),
+            child: Text("Create your new account, we are glad ",style: GoogleFonts.pragatiNarrow(
+                      textStyle: TextStyle(
+                    fontSize: 19.sp,
+                    fontWeight: FontWeight.w400,
+                  ))),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 1.0, left: 30.0),
+            child: Text("that you joined us ",style: GoogleFonts.pragatiNarrow(
+                      textStyle: TextStyle(
+                    fontSize: 19.sp,
+                    fontWeight: FontWeight.w400,
+                  ))),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(32.0),
             child: Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
@@ -79,9 +90,8 @@ class Login extends GetView<LoginController> {
               ),
             ),
           ),
-
           Padding(
-            padding: const EdgeInsets.only(top: 40, left: 10),
+            padding: const EdgeInsets.only(top: 10, left: 30),
             child: Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
@@ -112,8 +122,7 @@ class Login extends GetView<LoginController> {
               ),
             ),
           ),
-         
-          Padding(
+            Padding(
             padding: const EdgeInsets.only(top:50.0,left: 80),
             child: Container(
               width: 70.w,
@@ -123,21 +132,49 @@ class Login extends GetView<LoginController> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left:90.0),
+                    child: 
+                       GestureDetector(
+                        onTap: () {
+                      
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            // color:Colors.black,
+                           
+                             borderRadius: BorderRadius.circular(15)
+                          ),
+                          width:20.w,
+                          height: 5.h,
+                          
+                          child: Center(
+                            child: Text("Signup",style: GoogleFonts.roboto(
+                                   textStyle: TextStyle(color:Colors.black,
+                                 fontSize: 17.sp,
+                                fontWeight: FontWeight.w400,
+                               ))),
+                          ),
+                        ),
+                      ),
+                    
+                  ),
+                 Padding(
+                    padding: const EdgeInsets.only(left:10.0),
                     child: GestureDetector(
                       onTap: () {
-                        Get.toNamed(Routes.REGISTER);
+                        Get.toNamed(Routes.LOGIN);
                       },
                       child: Container(
                         decoration: BoxDecoration(
-                           //color:Colors.yellow,
-                           borderRadius: BorderRadius.circular(15)
+                         color:Colors.black,
+                         borderRadius: BorderRadius.circular(15)
+                    
                         ),
                         width:20.w,
                         height: 5.h,
                         
                         child: Center(
-                          child: Text("Signup",style: GoogleFonts.roboto(
-                                 textStyle: TextStyle(
+                          child: Text("Login",style: GoogleFonts.roboto(
+                                 textStyle: TextStyle(color:Color(0xffff9675),
                                fontSize: 17.sp,
                               fontWeight: FontWeight.w400,
                              ))),
@@ -145,74 +182,21 @@ class Login extends GetView<LoginController> {
                       ),
                     ),
                   ),
-                 Padding(
-                    padding: const EdgeInsets.only(left:10.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                       color:Color(0xffF0F0F0),
-                       borderRadius: BorderRadius.circular(15)
-
-                      ),
-                      width:20.w,
-                      height: 5.h,
-                      
-                      child: Center(
-                        child: Text("Login",style: GoogleFonts.roboto(
-                               textStyle: TextStyle(
-                             fontSize: 17.sp,
-                            fontWeight: FontWeight.w400,
-                           ))),
-                      ),
-                    ),
-                  ),
+                   
                 ],
               ),
             ),
           ),
-
           Padding(
-            padding: const EdgeInsets.only(top:8.0,left:50.0),
-            child: Text("Reset Password !",style: GoogleFonts.roboto(
-                      textStyle: TextStyle(
-                        color:Color(0xff3624FF),
-                    fontSize: 17.sp,
-                    fontWeight: FontWeight.w400,
-                  ))),
+            padding: const EdgeInsets.only(top:150,left: 20),
+            child: Text("EN | FR | AR",style: GoogleFonts.roboto(
+                    textStyle: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 17.sp,
+                    ),),),
           ),
-       
-
-          
-          Padding(
-            padding: const EdgeInsets.only(top:120.0),
-            child: Container(
-              width:double.infinity,
-              height: 5.h,
-              //color: Colors.red,
-              child: Padding(
-                padding: const EdgeInsets.only(left:16.0,right:16.0),
-                child: Row(
-                  
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                  Text("EN | FR | AR",style: GoogleFonts.roboto(
-                  textStyle: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 17.sp,
-                  ),),),
-                  
-                  Text("Contact Support !",style: GoogleFonts.roboto(
-                  textStyle: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 17.sp,
-                  ),)),
-
-                ],),
-              ),
-            ),
-          )
-          
         ],
-      ),
+      )
     );
   }
 }
