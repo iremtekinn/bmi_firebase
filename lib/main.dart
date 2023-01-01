@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         ),
        // home: const MyHomePage(title: 'Flutter Demo Home Page'),
        debugShowCheckedModeBanner: false,
-       initialRoute: Routes.LOGIN,
+       initialRoute: Routes.Splash,
        getPages: AppPages.routes,
       );
       },

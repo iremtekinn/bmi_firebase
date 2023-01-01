@@ -147,21 +147,26 @@ class Login extends GetView<LoginController> {
                   ),
                  Padding(
                     padding: const EdgeInsets.only(left:10.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                       color:Color(0xffF0F0F0),
-                       borderRadius: BorderRadius.circular(15)
-
-                      ),
-                      width:20.w,
-                      height: 5.h,
-                      
-                      child: Center(
-                        child: Text("Login",style: GoogleFonts.roboto(
-                               textStyle: TextStyle(
-                             fontSize: 17.sp,
-                            fontWeight: FontWeight.w400,
-                           ))),
+                    child: GestureDetector(
+                      onTap: () {
+                        Get.toNamed(Routes.PageOne);
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                         color:Color(0xffF0F0F0),
+                         borderRadius: BorderRadius.circular(15)
+                    
+                        ),
+                        width:20.w,
+                        height: 5.h,
+                        
+                        child: Center(
+                          child: Text("Login",style: GoogleFonts.roboto(
+                                 textStyle: TextStyle(
+                               fontSize: 17.sp,
+                              fontWeight: FontWeight.w400,
+                             ))),
+                        ),
                       ),
                     ),
                   ),
