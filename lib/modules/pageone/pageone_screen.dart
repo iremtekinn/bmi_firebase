@@ -80,7 +80,11 @@ class PageOne extends GetView<PageOneController> {
                     color: Colors.white,
                     boxShadow: [
                       BoxShadow(
-                        color: Color.fromRGBO(0, 0, 0, 0.14),
+                        //color: Color.fromRGBO(0, 0, 0, 0.14),
+                        color:Color(
+                                0xffECECEC,
+                               // 0xffE1E1E1 ,
+                              ),
                         blurRadius: 5,
                         offset: Offset(6, 15),
                       ),
@@ -113,7 +117,11 @@ class PageOne extends GetView<PageOneController> {
                     color: Colors.white,
                     boxShadow: [
                       BoxShadow(
-                        color: Color.fromRGBO(0, 0, 0, 0.14),
+                       // color: Color.fromRGBO(0, 0, 0, 0.14),
+                       color:Color(
+                                0xffECECEC,
+                               // 0xffE1E1E1 ,
+                              ),
                         blurRadius: 5,
                         offset: Offset(6, 15),
                       ),
@@ -146,7 +154,11 @@ class PageOne extends GetView<PageOneController> {
                     color: Colors.white,
                     boxShadow: [
                       BoxShadow(
-                        color: Color.fromRGBO(0, 0, 0, 0.14),
+                       // color: Color.fromRGBO(0, 0, 0, 0.14),
+                        color:Color(
+                                0xffECECEC,
+                               // 0xffE1E1E1 ,
+                              ),
                         blurRadius: 5,
                         offset: Offset(6, 15),
                       ),
