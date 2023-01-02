@@ -8,8 +8,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../routes/app_pages.dart';
+import '../pageone/pageone_controller.dart';
 
-class PageTwo extends StatelessWidget {
+class PageTwo extends GetView<PageOneController>{
   const PageTwo({super.key});
 
   @override
@@ -45,12 +46,17 @@ class PageTwo extends StatelessWidget {
                             ),
                             fontSize: 20.sp))),
                             SizedBox(height: 4.h,),
-                            Text("25.0",
+                            Text(
+                              //"25.0",
+                              controller.bmi.toStringAsFixed(2),
+                            
                 style: GoogleFonts.roboto(
                     textStyle: TextStyle(
                   fontSize: 38.sp,
                   fontWeight: FontWeight.w400,
                 ))),
+
+                
                 SizedBox(height: 2.h,),
                 Padding(
                   padding: const EdgeInsets.only(left:60.0),
