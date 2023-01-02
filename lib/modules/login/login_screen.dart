@@ -63,6 +63,7 @@ class Login extends GetView<LoginController> {
               width: 80.w,
               height: 6.h,
               child: TextFormField(
+                controller: controller.email,
                 decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(width: 3, color: Colors.white),
@@ -96,6 +97,8 @@ class Login extends GetView<LoginController> {
               width: 80.w,
               height: 6.h,
               child: TextFormField(
+                obscureText: true,
+                controller: controller.password,
                 decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(width: 3, color: Colors.white),
@@ -148,7 +151,8 @@ class Login extends GetView<LoginController> {
                  Padding(
                     padding: const EdgeInsets.only(left:10.0),
                     child: GestureDetector(
-                      onTap: () {
+                      onTap: () async{
+                        await controller.auth.acount(controller.email.text,controller.password.text);
                         Get.toNamed(Routes.PageOne);
                       },
                       child: Container(

@@ -74,6 +74,7 @@ class Register extends GetView<RegisterController> {
               width: 80.w,
               height: 6.h,
               child: TextFormField(
+                controller: controller.email,
                 decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(width: 3, color: Colors.white),
@@ -106,6 +107,7 @@ class Register extends GetView<RegisterController> {
               width: 80.w,
               height: 6.h,
               child: TextFormField(
+                controller: controller.password,
                 decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(width: 3, color: Colors.white),
@@ -135,7 +137,7 @@ class Register extends GetView<RegisterController> {
                     child: 
                        GestureDetector(
                         onTap: () {
-                      
+                        controller.auth.createUser(controller.email.text,controller.password.text);
                         },
                         child: Container(
                           decoration: BoxDecoration(
