@@ -20,7 +20,7 @@ class PageTwo extends GetView<PageOneController>{
         child: Column(
           children: [
             Padding(
-            padding: const EdgeInsets.only(left:54.0,top:60.0),
+            padding: const EdgeInsets.only(left:20.0,top:60.0),
             child: Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
@@ -32,7 +32,7 @@ class PageTwo extends GetView<PageOneController>{
                       offset: Offset(10, 20),
                     ),
                   ]),
-              width:75.w,
+              width:90.w,
                 height: 40.h,
                 
               child: Column(
@@ -48,7 +48,7 @@ class PageTwo extends GetView<PageOneController>{
                             SizedBox(height: 4.h,),
                             Text(
                               //"25.0",
-                              controller.bmi.toStringAsFixed(2),
+                              controller.result.toStringAsFixed(2),
                             
                 style: GoogleFonts.roboto(
                     textStyle: TextStyle(
@@ -69,7 +69,10 @@ class PageTwo extends GetView<PageOneController>{
                               ),
                               fontSize: 16.sp))),
                               SizedBox(width:4.w),
-                              Text("Normal",style: GoogleFonts.roboto(
+                              Text(
+                                //"Normal",
+                                controller.bmiStatus,
+                                style: GoogleFonts.roboto(
                         textStyle: TextStyle(
                           color:Color(0xff3624FF),
                       fontSize: 19.sp,
@@ -78,7 +81,20 @@ class PageTwo extends GetView<PageOneController>{
                     ],
                   ),
                 ),
-                SizedBox(height: 3.h,),
+               
+                Padding(
+                  padding: const EdgeInsets.only(left:15.0,top:10),
+                  child: Text(
+                                  //"Normal",
+                                  controller.bmiInterpretation,
+                                  style: GoogleFonts.roboto(
+                          textStyle: TextStyle(
+                            color:Color(0xff989898),
+                        fontSize: 16.sp,
+                        
+                      ))),
+                ),
+                SizedBox(height: 2.h,),
             Text("Healthy BMI range :18.5 kg/m2 - 25 kg/m2",style:GoogleFonts.roboto(
                         textStyle: TextStyle(
                             color: Color(

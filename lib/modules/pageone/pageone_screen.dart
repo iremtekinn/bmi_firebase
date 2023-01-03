@@ -169,7 +169,7 @@ class PageOne extends GetView<PageOneController> {
                 width: 80.w,
                 height: 6.h,
                 child: TextFormField(
-                  controller: controller.weightController,
+                 controller: controller.weightController,
                   decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(width: 3, color: Colors.white),
@@ -190,10 +190,13 @@ class PageOne extends GetView<PageOneController> {
             Padding(
             padding: const EdgeInsets.only(top:80.0,left:10.0),
             child: GestureDetector(
-              onTap:() async{
+              onTap:() 
+             // async
+              {
                // Get.toNamed(Routes.PageTwo); ui için  pagetwo ya gidiyor
-              await controller.bmiHesapla();// işlevsellik için  pagetwo ya gidiyor23
-              controller.db.addUserInfo(controller.height, controller.weight, controller.bmi);
+              //await controller.bmiHesapla();// işlevsellik için  pagetwo ya gidiyor23
+             // controller.db.addUserInfo(controller.height, controller.weight, controller.bmi);
+             controller.isBMIControl();
               },
               child: Center(
                 child: Text("Calculate",style: GoogleFonts.roboto(
